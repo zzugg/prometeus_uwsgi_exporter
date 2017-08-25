@@ -130,11 +130,7 @@ func ValidateConfig() {
 		// Calculate full path
 		var FullPath string
 
-		if path.IsAbs(Conf.SoketDir) {
-			FullPath = Conf.SoketDir
-		} else {
-			FullPath = path.Join(Conf.SoketDir, SoketPath.Soket)
-		}
+		FullPath = path.Join(Conf.SoketDir, SoketPath.Soket)
 
 		if CheckUnixSoket(FullPath) {
 			FoundError = true
